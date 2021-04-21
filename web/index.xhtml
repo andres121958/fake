@@ -10,8 +10,14 @@
     <h:body>
         <h:form>
             <label for="inputtext4">CORREO ELECTRONICO: </label>
-            <h:inputText value="prueba"></h:inputText>
-            
+            <h:inputText value="#{email.subject}"
+                         validator="#{email.validateEmail}"
+                         label="from"
+                         id="from"
+                         size="20"
+                         class="form-control">
+            </h:inputText>
+
         </h:form>
     </h:body>
 </html>
