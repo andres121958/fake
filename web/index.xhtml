@@ -10,17 +10,8 @@
     <h:body>
         <h:form>
             <label for="inputtext4">CORREO ELECTRONICO: </label>
-            <input></input>
-            <div class="form-group">
-                <label for="exampleFormControlTextarea1">ESCRIBE TU COMENTARIO: </label>
-                <h:inputTextarea id="descr" cols="50" rows="5" value="#{email.descr}" class="form-control" required="required" validator="#{email.validarComentario}">
-                </h:inputTextarea>
-                <h:message style="color:red" for="descr"/>
-            </div>
-            <h:commandButton action="#{email.submitEmail}" value="Enviar"
-                             id="submit"
-                             class="btn btn-success"/>
-            <br></br>
+            <input value="prueba"></input>
+            
         </h:form>
     </h:body>
 </html>
