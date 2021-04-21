@@ -1,12 +1,33 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h1>Hola mundo del phishing</h1>
+        <h:form>
+            <label for="inputtext4">CORREO ELECTRONICO: </label>
+            <h:inputText value="#{email.subject}"
+                         validator="#{email.validateEmail}"
+                         label="from"
+                         id="from"
+                         size="20"
+                         class="form-control">                
+            </h:inputText>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">ESCRIBE TU COMENTARIO: </label>
+                <h:inputTextarea id="descr" cols="50" rows="5" value="#{email.descr}" class="form-control" required="required" validator="#{email.validarComentario}">
+                </h:inputTextarea>
+                <h:message style="color:red" for="descr"/>
+            </div>
+            <h:commandButton action="#{email.submitEmail}" value="Enviar"
+                             id="submit"
+                             class="btn btn-success"/>
+            <br></br>
+        </h:form>
     </h:body>
 </html>
 
